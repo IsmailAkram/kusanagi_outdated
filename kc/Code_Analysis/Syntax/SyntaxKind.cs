@@ -1,4 +1,4 @@
-namespace Kusanagi.Code_Analysis
+namespace Kusanagi.Code_Analysis.Syntax
 {
     public enum SyntaxKind
     {

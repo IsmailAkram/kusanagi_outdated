@@ -7,7 +7,7 @@
 
 */
 
-namespace Kusanagi.Code_Analysis
+namespace Kusanagi.Code_Analysis.Syntax
 {
     internal static class SyntaxFacts
     {

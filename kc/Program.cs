@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Kusanagi.Code_Analysis;
+using Kusanagi.Code_Analysis.Syntax;
 
 namespace Kusanagi
 {

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Kusanagi.Code_Analysis
+namespace Kusanagi.Code_Analysis.Syntax
 {
     public sealed class BinaryExpressionSyntax : ExpressionSyntax // data structures in order (for now). Syntax nodes public for API
     {

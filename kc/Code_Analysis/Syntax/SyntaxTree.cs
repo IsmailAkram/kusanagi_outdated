@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Kusanagi.Code_Analysis
+namespace Kusanagi.Code_Analysis.Syntax
 {
     public sealed class SyntaxTree
     {

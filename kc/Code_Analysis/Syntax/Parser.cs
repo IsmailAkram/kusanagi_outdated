@@ -25,7 +25,7 @@ using System.Collections.Generic;
           1   1
 
 */
-namespace Kusanagi.Code_Analysis
+namespace Kusanagi.Code_Analysis.Syntax
 {
     internal sealed class Parser
     {
