@@ -1,4 +1,4 @@
-namespace Kusanagi.Code_Analysis
+namespace Kusanagi.Code_Analysis.Syntax
 {
     public enum SyntaxKind
     {
@@ -16,7 +16,9 @@ namespace Kusanagi.Code_Analysis
         
         // Expressions
         LiteralExpression,
+        UnaryExpression,
         BinaryExpression,
-        ParenthesizedExpression
+        ParenthesizedExpression,
+        
     }
 }

@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Kusanagi.Code_Analysis;
+using Kusanagi.Code_Analysis.Syntax;
 
 namespace Kusanagi
 {
@@ -63,7 +64,7 @@ namespace Kusanagi
             }
         }
 
-        static void PrettyPrint(Syntaxnode node, string indent = "", bool IsLast = true)
+        static void PrettyPrint(SyntaxNode node, string indent = "", bool IsLast = true)
         {
             // for presentation (appropriated from https://en.wikipedia.org/wiki/Tree_(command))
             // │

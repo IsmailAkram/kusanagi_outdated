@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Kusanagi.Code_Analysis
+namespace Kusanagi.Code_Analysis.Syntax
 {
     public sealed class LiteralExpressionSyntax : ExpressionSyntax
     {
@@ -12,7 +12,7 @@ namespace Kusanagi.Code_Analysis
         public override SyntaxKind Kind => SyntaxKind.LiteralExpression;
         public SyntaxToken LiteralToken { get; }
 
-        public override IEnumerable<Syntaxnode> GetChildren()
+        public override IEnumerable<SyntaxNode> GetChildren()
         {
             yield return LiteralToken;
         }
