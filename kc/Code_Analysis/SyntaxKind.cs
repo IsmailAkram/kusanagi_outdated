@@ -16,7 +16,9 @@ namespace Kusanagi.Code_Analysis
         
         // Expressions
         LiteralExpression,
+        UnaryExpression,
         BinaryExpression,
-        ParenthesizedExpression
+        ParenthesizedExpression,
+        
     }
 }

@@ -12,6 +12,19 @@ using System.Collections.Generic;
 
     */
 
+/*  Unary operator trees
+        +1
+        -1 * -3
+        -(3 + 3)
+
+
+            -
+            |
+            *
+           / \
+          1   1
+
+*/
 namespace Kusanagi.Code_Analysis
 {
     internal sealed class Parser
@@ -80,7 +93,18 @@ namespace Kusanagi.Code_Analysis
 
         private ExpressionSyntax ParseExpression(int parentPrecedence = 0)
         {
-            var left = ParsePrimaryExpression();
+            ExpressionSyntax left;
+            var unaryOperatorPrecedence = Current.Kind.GetUnaryOperatorPrecedence();
+            if (unaryOperatorPrecedence != 0 && unaryOperatorPrecedence >= parentPrecedence)
+            {
+                var operatorToken = NextToken();
+                var operand = ParseExpression(unaryOperatorPrecedence);
+                left = new UnaryExpressionSyntax(operatorToken, operand);
+            }
+            else
+            {
+                left = ParsePrimaryExpression();
+            }
 
             while (true)
             {

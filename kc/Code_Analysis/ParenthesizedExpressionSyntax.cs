@@ -16,7 +16,7 @@ namespace Kusanagi.Code_Analysis
         public ExpressionSyntax Expression { get; }
         public SyntaxToken ClosedParenthesisToken { get; }
 
-        public override IEnumerable<Syntaxnode> GetChildren()
+        public override IEnumerable<SyntaxNode> GetChildren()
         {
             yield return OpenParenthesisToken;
             yield return Expression;

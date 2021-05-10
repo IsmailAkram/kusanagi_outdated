@@ -16,7 +16,7 @@ namespace Kusanagi.Code_Analysis
         public SyntaxToken OperatorToken { get; }
         public ExpressionSyntax Right { get; }
 
-        public override IEnumerable<Syntaxnode> GetChildren() // create an Enumerable (array) where first item is "Left"
+        public override IEnumerable<SyntaxNode> GetChildren() // create an Enumerable (array) where first item is "Left"
         {
             yield return Left;
             yield return OperatorToken;
