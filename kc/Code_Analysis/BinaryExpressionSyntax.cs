@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Kusanagi.Code_Analysis
 {
-    sealed class BinaryExpressionSyntax : ExpressionSyntax // data structures in order (for now)
+    public sealed class BinaryExpressionSyntax : ExpressionSyntax // data structures in order (for now). Syntax nodes public for API
     {
         public BinaryExpressionSyntax(ExpressionSyntax left, SyntaxToken operatorToken, ExpressionSyntax right)
         {

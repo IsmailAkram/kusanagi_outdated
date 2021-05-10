@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Kusanagi.Code_Analysis
 {
-    class SyntaxToken : Syntaxnode             // pretend syntax tokens are the leaves in our tree
+    public sealed class SyntaxToken : Syntaxnode             // pretend syntax tokens are the leaves in our tree
     {
         public SyntaxToken(SyntaxKind kind, int position, string text, object value) // object for strings/floats for later
         {

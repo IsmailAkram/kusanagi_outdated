@@ -10,11 +10,11 @@ using Kusanagi.Code_Analysis;
 namespace Kusanagi
 {
 
-    class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
-            bool showTree = false;
+            var showTree = false;
 
             while (true)
             {
@@ -40,10 +40,9 @@ namespace Kusanagi
 
                 if (showTree)
                 {
-                    var color = Console.ForegroundColor;
                     Console.ForegroundColor = ConsoleColor.DarkGray;
                     PrettyPrint(syntaxTree.Root);
-                    Console.ForegroundColor = color;
+                    Console.ResetColor();
                 }
 
                 if (!syntaxTree.Diagonostics.Any())
@@ -54,13 +53,12 @@ namespace Kusanagi
                 }
                 else
                 {
-                    var color = Console.ForegroundColor;
                     Console.ForegroundColor = ConsoleColor.DarkRed;
 
                     foreach (var diagnositcs in syntaxTree.Diagonostics)
                         Console.WriteLine(diagnositcs);
 
-                    Console.ForegroundColor = color;
+                    Console.ResetColor();
                 }
             }
         }
@@ -86,7 +84,7 @@ namespace Kusanagi
 
             Console.WriteLine();
 
-            indent += IsLast ? "    " : "│   ";
+            indent += IsLast ? "   " : "│   ";
 
             var lastChild = node.GetChildren().LastOrDefault(); // I kept crashing, LastorDefault saved it
 
