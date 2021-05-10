@@ -19,7 +19,7 @@ namespace Kusanagi.Code_Analysis
         private readonly SyntaxToken[] _tokens;
 
         private List<string> _diagnostics = new List<string>();
-        private int _position; // curren token
+        private int _position; // current token
 
         public Parser(string text)
         {
@@ -29,7 +29,7 @@ namespace Kusanagi.Code_Analysis
             SyntaxToken token;
             do
             {
-                token = lexer.NextToken();
+                token = lexer.Lex();
 
                 if (token.Kind != SyntaxKind.WhitespaceToken && token.Kind != SyntaxKind.BadToken)
                 {
@@ -62,10 +62,11 @@ namespace Kusanagi.Code_Analysis
             return current;
         }
 
-         private SyntaxToken MatchToken(SyntaxKind kind)
+        private SyntaxToken MatchToken(SyntaxKind kind)
         {
             if (Current.Kind == kind)
                 return NextToken();
+            
             _diagnostics.Add($"ERROR: Unexpected token <{Current.Kind}>, expected: <{kind}>");
             return new SyntaxToken(kind, Current.Position, null, null);
         }
@@ -77,37 +78,18 @@ namespace Kusanagi.Code_Analysis
             return new SyntaxTree(_diagnostics, expression, eOFToken);
         }
 
-        private ExpressionSyntax ParseExpression()
-        {
-            return ParseTerm();
-        }
-
-        private ExpressionSyntax ParseTerm()         // logically: first parse the "leaves" at the bottom. then build the method structures on top as you go.
-        {
-            var left = ParseFactor(); // ParsePrimaryExpression (split to handle PEMDAS)
-
-            // recursive descent parser to handle mathematics correctly (PEMDAS); forming the tree structure.
-            while (Current.Kind == SyntaxKind.PlusToken || 
-                   Current.Kind == SyntaxKind.MinusToken)
-            {
-                var operatorToken = NextToken();
-                var right = ParseFactor();
-                left = new BinaryExpressionSyntax(left, operatorToken, right);
-            }
-
-            return left;
-        }
-
-        private ExpressionSyntax ParseFactor()         // correct term for "multiplicative expression"
+        private ExpressionSyntax ParseExpression(int parentPrecedence = 0)
         {
             var left = ParsePrimaryExpression();
 
-            // recursive descent parser to handle mathematics correctly (PEMDAS); forming the tree structure.
-            while (Current.Kind == SyntaxKind.StarToken ||
-                   Current.Kind == SyntaxKind.SlashToken)
+            while (true)
             {
+                var precedence = Current.Kind.GetBinaryOperatorPrecedence();
+                if (precedence == 0 || precedence <= parentPrecedence)
+                    break;
+
                 var operatorToken = NextToken();
-                var right = ParsePrimaryExpression();
+                var right = ParseExpression(precedence);
                 left = new BinaryExpressionSyntax(left, operatorToken, right);
             }
 

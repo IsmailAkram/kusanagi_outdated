@@ -2,14 +2,14 @@ using System.Collections.Generic;
 
 namespace Kusanagi.Code_Analysis
 {
-    public sealed class LiteralExpressionToken : ExpressionSyntax
+    public sealed class LiteralExpressionSyntax : ExpressionSyntax
     {
-        public LiteralExpressionToken(SyntaxToken literalToken)
+        public LiteralExpressionSyntax(SyntaxToken literalToken)
         {
             LiteralToken = literalToken;
         }
 
-        public override SyntaxKind Kind => SyntaxKind.NumberExpression;
+        public override SyntaxKind Kind => SyntaxKind.LiteralExpression;
         public SyntaxToken LiteralToken { get; }
 
         public override IEnumerable<Syntaxnode> GetChildren()
