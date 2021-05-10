@@ -1,0 +1,16 @@
+C:\Users\Izzy\kusanagi\kc\bin\Debug\net5.0\kc.exe
+C:\Users\Izzy\kusanagi\kc\bin\Debug\net5.0\kc.deps.json
+C:\Users\Izzy\kusanagi\kc\bin\Debug\net5.0\kc.runtimeconfig.json
+C:\Users\Izzy\kusanagi\kc\bin\Debug\net5.0\kc.runtimeconfig.dev.json
+C:\Users\Izzy\kusanagi\kc\bin\Debug\net5.0\kc.dll
+C:\Users\Izzy\kusanagi\kc\bin\Debug\net5.0\ref\kc.dll
+C:\Users\Izzy\kusanagi\kc\bin\Debug\net5.0\kc.pdb
+C:\Users\Izzy\kusanagi\kc\obj\Debug\net5.0\kc.csprojAssemblyReference.cache
+C:\Users\Izzy\kusanagi\kc\obj\Debug\net5.0\kc.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Izzy\kusanagi\kc\obj\Debug\net5.0\kc.AssemblyInfoInputs.cache
+C:\Users\Izzy\kusanagi\kc\obj\Debug\net5.0\kc.AssemblyInfo.cs
+C:\Users\Izzy\kusanagi\kc\obj\Debug\net5.0\kc.csproj.CoreCompileInputs.cache
+C:\Users\Izzy\kusanagi\kc\obj\Debug\net5.0\kc.dll
+C:\Users\Izzy\kusanagi\kc\obj\Debug\net5.0\ref\kc.dll
+C:\Users\Izzy\kusanagi\kc\obj\Debug\net5.0\kc.pdb
+C:\Users\Izzy\kusanagi\kc\obj\Debug\net5.0\kc.genruntimeconfig.cache
