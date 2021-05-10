@@ -14,7 +14,7 @@ using System.Collections.Generic;
 
 namespace Kusanagi.Code_Analysis
 {
-    class Parser
+    internal sealed class Parser
     {
         private readonly SyntaxToken[] _tokens;
 
@@ -62,7 +62,7 @@ namespace Kusanagi.Code_Analysis
             return current;
         }
 
-         private SyntaxToken Match(SyntaxKind kind)
+         private SyntaxToken MatchToken(SyntaxKind kind)
         {
             if (Current.Kind == kind)
                 return NextToken();
@@ -70,16 +70,16 @@ namespace Kusanagi.Code_Analysis
             return new SyntaxToken(kind, Current.Position, null, null);
         }
 
+        public SyntaxTree Parse()
+        {
+            var expression = ParseExpression();
+            var eOFToken = MatchToken(SyntaxKind.EOFtoken);
+            return new SyntaxTree(_diagnostics, expression, eOFToken);
+        }
+
         private ExpressionSyntax ParseExpression()
         {
             return ParseTerm();
-        }
-
-        public SyntaxTree Parse()
-        {
-            var expression = ParseTerm();
-            var eOFToken = Match(SyntaxKind.EOFtoken);
-            return new SyntaxTree(_diagnostics, expression, eOFToken);
         }
 
         private ExpressionSyntax ParseTerm()         // logically: first parse the "leaves" at the bottom. then build the method structures on top as you go.
@@ -120,12 +120,12 @@ namespace Kusanagi.Code_Analysis
             {
                 var left = NextToken();
                 var expression = ParseExpression();
-                var right = Match(SyntaxKind.CloseParenthesisToken);
+                var right = MatchToken(SyntaxKind.CloseParenthesisToken);
                 return new ParenthesizedExpressionSyntax(left, expression, right);
             }
 
-            var numberToken = Match(SyntaxKind.NumberToken);
-            return new NumberExpressionSyntax(numberToken);
+            var numberToken = MatchToken(SyntaxKind.NumberToken);
+            return new LiteralExpressionSyntax(numberToken);
         }
     }
 }

@@ -3,7 +3,7 @@ using System;
 namespace Kusanagi.Code_Analysis
 {
 
-    class Evaluator
+    public sealed class Evaluator // for now, not in long run
      {
         private readonly ExpressionSyntax _root;
 
@@ -24,8 +24,8 @@ namespace Kusanagi.Code_Analysis
             // BinaryExpression
             // NumberExpression
 
-            if (node is NumberExpressionSyntax n)
-                return (int) n.NumberToken.Value;
+            if (node is LiteralExpressionSyntax n)
+                return (int) n.LiteralToken.Value;
 
             if (node is BinaryExpressionSyntax b)
             {

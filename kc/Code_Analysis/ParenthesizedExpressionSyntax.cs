@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Kusanagi.Code_Analysis
 {
-    sealed class ParenthesizedExpressionSyntax : ExpressionSyntax
+    public sealed class ParenthesizedExpressionSyntax : ExpressionSyntax
     {
         public ParenthesizedExpressionSyntax(SyntaxToken openParenthesisToken, ExpressionSyntax expression, SyntaxToken closedParenthesisToken)
         {

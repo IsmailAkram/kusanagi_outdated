@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Kusanagi.Code_Analysis
 {
-    class Lexer                                 // responsible for reading into the actual value
+    internal sealed class Lexer                                 // responsible for reading into the actual value. Internal because Syntax parse
     {
         private readonly string _text;
         private int _position;

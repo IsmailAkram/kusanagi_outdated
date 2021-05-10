@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Kusanagi.Code_Analysis
 {
-    sealed class SyntaxTree
+    public sealed class SyntaxTree
     {
         public SyntaxTree(IEnumerable<string> diagonostics, ExpressionSyntax root, SyntaxToken eOFToken)
         {

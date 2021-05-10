@@ -2,19 +2,19 @@ using System.Collections.Generic;
 
 namespace Kusanagi.Code_Analysis
 {
-    sealed class NumberExpressionSyntax : ExpressionSyntax
+    public sealed class LiteralExpressionToken : ExpressionSyntax
     {
-        public NumberExpressionSyntax(SyntaxToken numberToken)
+        public LiteralExpressionToken(SyntaxToken literalToken)
         {
-            NumberToken = numberToken;
+            LiteralToken = literalToken;
         }
 
         public override SyntaxKind Kind => SyntaxKind.NumberExpression;
-        public SyntaxToken NumberToken { get; }
+        public SyntaxToken LiteralToken { get; }
 
         public override IEnumerable<Syntaxnode> GetChildren()
         {
-            yield return NumberToken;
+            yield return LiteralToken;
         }
     }
 }
