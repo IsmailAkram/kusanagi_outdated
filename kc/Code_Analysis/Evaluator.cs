@@ -12,8 +12,6 @@ namespace Kusanagi.Code_Analysis
             this._root = root;
         }
 
-        
-
         public int Evaluate()       // illegal to call this method if you have errors (for obvious reasons)
         {
             return EvaluateExpression(_root);

@@ -15,7 +15,8 @@ namespace Kusanagi.Code_Analysis
 
         public IEnumerable<string> Diagnositcs => _diagnostics;
 
-        private char Current{
+        private char Current
+        {
             get
             {
                 if (_position >= _text.Length)  // if the position is outside the bounds of the text

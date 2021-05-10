@@ -14,7 +14,6 @@ namespace Kusanagi.Code_Analysis
         OpenParenthesisToken,
         CloseParenthesisToken,
         
-
         // Expressions
         LiteralExpression,
         BinaryExpression,
