@@ -40,10 +40,8 @@ namespace Kusanagi
                 }
 
                 var syntaxTree = SyntaxTree.Parse(line);
-                var binder = new Binder();
-                var boundExpression = binder.BindExpression(syntaxTree.Root);
-
-                var diagnostics = syntaxTree.Diagnostics.Concat(binder.Diagnostics).ToArray();
+                var compilation = new Compilation(syntaxTree);
+                var result = compilation.Evaluate();
 
                 if (showTree)
                 {
@@ -52,17 +50,15 @@ namespace Kusanagi
                     Console.ResetColor();
                 }
 
-                if (!diagnostics.Any())
+                if (!result.Diagnostics.Any())
                 {
-                    var e = new Evaluator(boundExpression);
-                    var result = e.Evaluate();
-                    Console.WriteLine(result);
+                    Console.WriteLine(result.Value);
                 }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.DarkRed;
 
-                    foreach (var diagnositcs in diagnostics)
+                    foreach (var diagnositcs in result.Diagnostics)
                         Console.WriteLine(diagnositcs);
 
                     Console.ResetColor();
