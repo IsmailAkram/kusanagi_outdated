@@ -10,6 +10,7 @@ using Kusanagi.Code_Analysis;
 using Kusanagi.Code_Analysis.Binding;
 using Kusanagi.Code_Analysis.Syntax;
 
+//merge
 namespace Kusanagi
 {
 
@@ -87,7 +88,7 @@ namespace Kusanagi
 
             Console.WriteLine();
 
-            indent += IsLast ? "   " : "│   ";
+            indent += IsLast ? "   " : "│  ";
 
             var lastChild = node.GetChildren().LastOrDefault(); // I kept crashing, LastorDefault saved it
 
