@@ -11,14 +11,26 @@ namespace Kusanagi.Code_Analysis.Syntax
         MinusToken,
         StarToken,
         SlashToken,
+
+        // Logical gates
+        ExclamationToken,
+        LogicalANDToken,
+        LogicalORToken,
+        EqualityToken,
+        NotEqualityToken,
+
         OpenParenthesisToken,
         CloseParenthesisToken,
-        
+        IdentifierToken,
+
+        // Keywords
+        FalseKeyword,
+        TrueKeyword,
+
         // Expressions
         LiteralExpression,
         UnaryExpression,
         BinaryExpression,
         ParenthesizedExpression,
-        
     }
 }

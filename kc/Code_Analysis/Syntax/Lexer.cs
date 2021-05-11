@@ -15,15 +15,17 @@ namespace Kusanagi.Code_Analysis.Syntax
 
         public IEnumerable<string> Diagnositcs => _diagnostics;
 
-        private char Current
-        {
-            get
-            {
-                if (_position >= _text.Length)  // if the position is outside the bounds of the text
-                    return '\0';                // then return 0 terminator
+        private char Current => Peek(0);
+        private char Lookahead => Peek(1);      // So we can keep track of our position
 
-                return _text[_position];
-            }
+        private char Peek(int offset) 
+        {
+            var index = _position + offset; 
+
+            if (index >= _text.Length)          // if the position is outside the bounds of the text;
+                return '\0';                    // then return 0 terminator
+
+            return _text[index];
         }
 
         private void Next()
@@ -31,7 +33,7 @@ namespace Kusanagi.Code_Analysis.Syntax
             _position++;
         }
 
-        public SyntaxToken Lex()          // find next word from current position in file, take that and return, the keep going
+        public SyntaxToken Lex()                // find next word from current position in file, take that and return, the keep going
         {
             // Expression evaluators (words we need)
             // <numbers>
@@ -68,6 +70,19 @@ namespace Kusanagi.Code_Analysis.Syntax
                 return new SyntaxToken(SyntaxKind.WhitespaceToken, start, text, null);
             }
 
+            if (char.IsLetter(Current))
+            {
+                var start = _position;
+                
+                while (char.IsLetter(Current))
+                    Next();
+                
+                var length = _position - start;
+                var text = _text.Substring(start, length);
+                var kind = SyntaxFacts.GetKeywordKind(text);
+                return new SyntaxToken(kind, start, text, null);
+            }
+
             switch (Current)
             {
                 case '+':
@@ -82,6 +97,25 @@ namespace Kusanagi.Code_Analysis.Syntax
                     return new SyntaxToken(SyntaxKind.OpenParenthesisToken, _position++, "(", null);
                 case ')':
                     return new SyntaxToken(SyntaxKind.CloseParenthesisToken, _position++, ")", null);
+                
+                // adding cases to account for NOT, AND, and OR.    
+                case '&':
+                    if (Lookahead == '&')
+                        return new SyntaxToken(SyntaxKind.LogicalANDToken, _position += 2, "&&", null);
+                    break;
+                case '|':
+                    if (Lookahead == '|')
+                        return new SyntaxToken(SyntaxKind.LogicalORToken, _position += 2, "||", null);
+                    break;
+                case '=':
+                    if (Lookahead == '=')
+                        return new SyntaxToken(SyntaxKind.EqualityToken, _position += 2, "==", null);
+                    break;
+                case '!':
+                    if (Lookahead == '=')
+                        return new SyntaxToken(SyntaxKind.NotEqualityToken, _position += 2, "!=", null);
+                    else
+                        return new SyntaxToken(SyntaxKind.ExclamationToken, _position++, "!", null);
             }
 
             _diagnostics.Add($"ERROR: bad character input: '{Current}'");
