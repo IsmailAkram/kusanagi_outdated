@@ -1,6 +1,5 @@
 using System;
 using Kusanagi.Code_Analysis.Binding;
-using Kusanagi.Code_Analysis.Syntax;
 
 namespace Kusanagi.Code_Analysis
 {
