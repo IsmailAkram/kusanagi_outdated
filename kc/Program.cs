@@ -5,7 +5,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+
 using Kusanagi.Code_Analysis;
+using Kusanagi.Code_Analysis.Binding;
 using Kusanagi.Code_Analysis.Syntax;
 
 namespace Kusanagi
@@ -38,6 +40,10 @@ namespace Kusanagi
                 }
 
                 var syntaxTree = SyntaxTree.Parse(line);
+                var binder = new Binder();
+                var boundExpression = binder.BindExpression(syntaxTree.Root);
+
+                var diagnostics = syntaxTree.Diagnostics.Concat(binder.Diagnostics).ToArray();
 
                 if (showTree)
                 {
@@ -46,9 +52,9 @@ namespace Kusanagi
                     Console.ResetColor();
                 }
 
-                if (!syntaxTree.Diagonostics.Any())
+                if (!diagnostics.Any())
                 {
-                    var e = new Evaluator(syntaxTree.Root);
+                    var e = new Evaluator(boundExpression);
                     var result = e.Evaluate();
                     Console.WriteLine(result);
                 }
@@ -56,7 +62,7 @@ namespace Kusanagi
                 {
                     Console.ForegroundColor = ConsoleColor.DarkRed;
 
-                    foreach (var diagnositcs in syntaxTree.Diagonostics)
+                    foreach (var diagnositcs in diagnostics)
                         Console.WriteLine(diagnositcs);
 
                     Console.ResetColor();

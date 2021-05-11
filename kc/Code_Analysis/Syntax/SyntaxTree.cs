@@ -5,14 +5,14 @@ namespace Kusanagi.Code_Analysis.Syntax
 {
     public sealed class SyntaxTree
     {
-        public SyntaxTree(IEnumerable<string> diagonostics, ExpressionSyntax root, SyntaxToken eOFToken)
+        public SyntaxTree(IEnumerable<string> diagnostics, ExpressionSyntax root, SyntaxToken eOFToken)
         {
-            Diagonostics = diagonostics.ToArray(); // to deal with garbage values
+            Diagnostics = diagnostics.ToArray(); // to deal with garbage values
             Root = root;
             EOFToken = eOFToken;
         }
 
-        public IReadOnlyList<string> Diagonostics { get; }
+        public IReadOnlyList<string> Diagnostics { get; }
         public ExpressionSyntax Root { get; }
         public SyntaxToken EOFToken { get; }
 
