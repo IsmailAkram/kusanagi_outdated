@@ -20,7 +20,7 @@ This project is using the following resources:
 * [Video tutorial series by Imma Landwerth][Youtube] for detailed steps.
 
 
-[C Book]:(https://www.amazon.com/Crafting-Compiler-Charles-Fischer-July/dp/B015X4AO4E)
-[YouTube]:(https://www.youtube.com/watch?v=wgHIkdUQbp0&list=PLRAdsfhKI4OWNOSfS7EUu5GRAVmze1t2y)
+[C Book]: https://www.amazon.com/Crafting-Compiler-Charles-Fischer-July/dp/B015X4AO4E
+[YouTube]: https://www.youtube.com/watch?v=wgHIkdUQbp0&list=PLRAdsfhKI4OWNOSfS7EUu5GRAVmze1t2y
 
 NOTE: This project is still incomplete and is currently on a temporary grade.
