@@ -1,6 +1,6 @@
 # Milestone 2
 
-[Branch commits](https://github.com/IsmailAkram/kusanagi/commits/milestone2-unary-operators) |
+[Branch Commits](https://github.com/IsmailAkram/kusanagi/commits/milestone2-unary-operators) |
 [Previous](milestone-01.md) |
 [Next](milestone-03.md)
 
