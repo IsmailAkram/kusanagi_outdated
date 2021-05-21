@@ -1,0 +1,5 @@
+C:\Users\Izzy\kusanagi\Kusanagi\obj\Debug\net5.0\Kusanagi.csprojAssemblyReference.cache
+C:\Users\Izzy\kusanagi\Kusanagi\obj\Debug\net5.0\Kusanagi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Izzy\kusanagi\Kusanagi\obj\Debug\net5.0\Kusanagi.AssemblyInfoInputs.cache
+C:\Users\Izzy\kusanagi\Kusanagi\obj\Debug\net5.0\Kusanagi.AssemblyInfo.cs
+C:\Users\Izzy\kusanagi\Kusanagi\obj\Debug\net5.0\Kusanagi.csproj.CoreCompileInputs.cache
