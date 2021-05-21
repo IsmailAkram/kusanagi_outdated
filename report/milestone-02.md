@@ -12,6 +12,10 @@
 * Supports conditions (such as `1 == 1 && 1 != 2 || true`)
 * Type checking internal representation (`Binder`, and `BoundNode`)
 
+![](images/milestone2-1.PNG)
+
+![](images/milestone2-2.png)
+
 ## Key highlights
 
 ### Generalized parsing precedence
