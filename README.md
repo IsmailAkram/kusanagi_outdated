@@ -19,7 +19,7 @@ This project is using the following resources:
 * [Crafting a Compiler with C by Charles N. Fischer and Richard J. LeBlanc, Jr.][C Book] for C language tutorial
 * [Video tutorial series by Imma Landwerth][Youtube] for detailed steps.
 
-[420 Book]: CSC420 Lecture Notes.pdf
+[420 Book]: CSC420_Lecture_Notes.pdf
 [C Book]: https://www.amazon.com/Crafting-Compiler-Charles-Fischer-July/dp/B015X4AO4E
 [YouTube]: https://www.youtube.com/watch?v=wgHIkdUQbp0&list=PLRAdsfhKI4OWNOSfS7EUu5GRAVmze1t2y
 
