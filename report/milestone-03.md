@@ -28,7 +28,7 @@ Console.WriteLine(result.Value);
 ### Assignments as expressions
 
 C language treats assignments as expressions, rather than isolated top-level statements. This
-allows for writing code in this manner:
+allows for writing code like this:
 
 ```C#
 a = b = 1
