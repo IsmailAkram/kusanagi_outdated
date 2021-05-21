@@ -6,7 +6,7 @@ This repo is a compiler.
 
 ```
 Semester: spring 2021
-Prof: Michel Vulis
+Prof: Michael Vulis
 Class: CSC420 Compiler Construction
 ```
 
