@@ -42,6 +42,8 @@ In certain cases, like parsing:
 `(` and an `<expression>`, and a `)`, 
 it will assert that a token follows.
 
+![](images/milestone2-2.png)
+
 If the current token doesn't match the expression expectation, then it will create a [new matching fabricated token][match].
 
 This is for later parts of the compiler that go through the tree and avoids cases where it must assume anything could be null.
