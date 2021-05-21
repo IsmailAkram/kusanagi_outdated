@@ -1,4 +1,4 @@
-# Episode 2
+# Milestone 2
 
 [Commits Branch](https://github.com/IsmailAkram/kusanagi/commits/milestone2-unary-operators) |
 [Previous](milestone-01.md) |
