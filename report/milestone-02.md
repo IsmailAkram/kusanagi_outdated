@@ -1,8 +1,8 @@
 # Milestone 2
 
-[Commits Branch](https://github.com/IsmailAkram/kusanagi/commits/milestone2-unary-operators) |
+[Branch commits](https://github.com/IsmailAkram/kusanagi/commits/milestone2-unary-operators) |
 [Previous](milestone-01.md) |
-[Next]()
+[Next](milestone-03.md)
 
 ## Completed tasks
 
