@@ -1,7 +1,6 @@
 # Milestone 3
-
-[Branch Commits](https://github.com/IsmailAkram/kusanagi/commits/Milestone3-assignments-and-variables) |
 [Previous](milestone-02.md) |
+[Branch Commits](https://github.com/IsmailAkram/kusanagi/commits/Milestone3-assignments-and-variables) |
 [Next](milestone-04.md)
 
 ## Completed tasks
