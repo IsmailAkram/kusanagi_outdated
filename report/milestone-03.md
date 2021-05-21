@@ -64,6 +64,8 @@ For the left-hand-side (LHS), I'm only allowing variable names (as a [single tok
 Later, I need to deal with array indexes, qualified names. Most compilers will represent them as an expression. But we cannot represent *every* expression, like literals (`1`).
 These are called *L-values*.
 
+![](images/milestone3-1.png)
+
 [token]: https://github.com/IsmailAkram/kusanagi/blob/Milestone3-assignments-and-variables/Kusanagi/Code_Analysis/Syntax/AssignmentExpressionSyntax.cs
 [peek]: https://github.com/IsmailAkram/kusanagi/blob/Milestone3-assignments-and-variables/Kusanagi/Code_Analysis/Syntax/Parser.cs#L94-L121
 
