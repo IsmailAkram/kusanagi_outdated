@@ -27,7 +27,7 @@ When parsing the expression `1 + 2 * 3`, we parse it into a tree structure with 
         └──NumberExpression
             └──NumberToken 3
 ```
-![](report/images/milestone2-1.PNG)
+![](milestone2-1.PNG)
 
 Having a correct priority of operators is vital as it ensures the correct output is achieved. (`*` binds stronger than `+`).
 
