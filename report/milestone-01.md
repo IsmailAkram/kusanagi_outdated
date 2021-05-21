@@ -1,6 +1,6 @@
 # Milestone 1
 
-[Commits branch](https://github.com/IsmailAkram/kusanagi/commits/milestone1-lexer-and-parser) | [Next]()
+[Commits Branch](https://github.com/IsmailAkram/kusanagi/commits/milestone1-lexer-and-parser) | [Next]()
 
 ## Completed tasks
 
