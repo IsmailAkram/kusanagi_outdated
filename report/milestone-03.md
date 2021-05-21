@@ -59,12 +59,12 @@ a   =
 which means that `=` is *right associative*. First `b` is assigned the value `5` and *then* `a` is assigned
 the value `1`.
 
-For the left-hand-side (LHS), I'm only allowing variable names (as a [single token][token]) for now. Which is also great as it allows for ["peeking" ahead][peek] for easier parsing.
+For the left-hand-side (LHS), I'm only allowing variable names (as a [single token][token]) for now. Which is also great as it allows for [peeking ahead][peek] for easier parsing.
 
-Later, I need to deal with array indexes, qualified names. Most compilers will represent them as an expression. But we can represent *every* expression, like literals (`1`).
+Later, I need to deal with array indexes, qualified names. Most compilers will represent them as an expression. But we cannot represent *every* expression, like literals (`1`).
 These are called *L-values*.
 
 [token]: https://github.com/IsmailAkram/kusanagi/blob/Milestone3-assignments-and-variables/Kusanagi/Code_Analysis/Syntax/AssignmentExpressionSyntax.cs
 [peek]: https://github.com/IsmailAkram/kusanagi/blob/Milestone3-assignments-and-variables/Kusanagi/Code_Analysis/Syntax/Parser.cs#L94-L121
 
-Note: AssignmentExpressionSyntax.cs does not exist yet. This is where I stopped.
+Note: AssignmentExpressionSyntax.cs DOES NOT EXIST yet. This is where I stopped.
