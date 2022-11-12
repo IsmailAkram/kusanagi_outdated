@@ -22,5 +22,3 @@ This project is using the following resources:
 [420 Book]: report/CSC420_Lecture_Notes.pdf
 [C Book]: https://www.amazon.com/Crafting-Compiler-Charles-Fischer-July/dp/B015X4AO4E
 [YouTube]: https://www.youtube.com/watch?v=wgHIkdUQbp0&list=PLRAdsfhKI4OWNOSfS7EUu5GRAVmze1t2y
-
-NOTE: This project is still incomplete and is currently on a temporary grade.
